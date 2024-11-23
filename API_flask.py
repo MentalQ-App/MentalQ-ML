@@ -92,15 +92,6 @@ def predict():
             confidence_mapping = {labels[j]: float(predictions[i][j]) for j in range(len(labels))}
             predicted_status = labels[np.argmax(predictions[i])]
 
-            # Logika untuk menangkap kasus suicidal
-            if confidence_mapping["Suicidal"] >= threshold:
-                predicted_status = "Suicidal"
-            
-            # Tambahkan heuristik berbasis keyword
-            suicidal_keywords = ["kill", "end life", "suicide", "depressed", "hopeless"]
-            if any(keyword in statement.lower() for keyword in suicidal_keywords):
-                predicted_status = "Suicidal"
-
             response.append({
                 'statement': statement,
                 'predicted_status': predicted_status,
