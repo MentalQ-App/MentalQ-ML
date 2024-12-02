@@ -27,7 +27,7 @@ tokenizer = Tokenizer()
 tokenizer.fit_on_texts(df_data['statement prepos'])
 
 # Label urut sesuai output model
-labels = ["Normal","Depression", "Suicidal", "Anxiety", "Stress", "Bipolar", "Personality Disorder"]
+labels = ["Normal", "Depression", "Suicidal", "Anxiety", "Stress", "Bipolar", "Personality Disorder"]
 
 # Inisialisasi label encoder
 label_encoder = LabelEncoder()
@@ -87,9 +87,8 @@ def predict():
 
         # Dekode prediksi menjadi label
         response = []
-        threshold = 0.5  # Atur threshold untuk mendeteksi suicidal
         for i, statement in enumerate(statements):
-            confidence_mapping = {labels[j]: float(predictions[i][j]) for j in range(len(labels))}
+            confidence_mapping = {labels[j]: float(predictions[i][j]) for j in range(len(predictions[i]))}
             predicted_status = labels[np.argmax(predictions[i])]
 
             response.append({
@@ -97,7 +96,7 @@ def predict():
                 'predicted_status': predicted_status,
                 'confidence_scores': confidence_mapping
             })
-
+            
         return jsonify(response)
     
     except Exception as e:
@@ -107,4 +106,4 @@ def predict():
 
 # Jalankan Flask app
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
