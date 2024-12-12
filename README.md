@@ -4,12 +4,12 @@
 
 1. [Description](#Description)
 2. [Team](#C242-PS246---ml)
-3. [Technology](#Technology_&_Library)
+3. [Technology](#Technology-&-Library)
 4. [Requirement](#Requirement)
-5. [Installation Steps](#Installation_Steps)
-6. [API Endpoints](#API_Endpoints)
+5. [Installation Steps](#Installation-Steps)
+6. [API Endpoints](#API-Endpoints)
 7. [Usage](#Usage)
-8. [Example Response](#Example_Response)
+8. [Example Response](#Example-Response)
 
 ## Description
 The **Machine Learning** part of the MentalQ app helps analyze users' mental health by studying their daily notes. It uses a **LSTM model** to look at the text and understand how users are feeling. The process starts by collecting and cleaning the data, then training the model to recognize different mental health patterns. Once the model is ready, it’s built into the app to give users personalized feedback based on their mood. Tools like **TensorFlow** and **NLTK** help build and improve the model. By using this technology, MentalQ can help users better understand their mental health, offering support when they need it most.
