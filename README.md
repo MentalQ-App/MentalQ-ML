@@ -4,7 +4,7 @@
 
 1. [Description](#Description)
 2. [Team](#C242-PS246---ml)
-3. [Technology](#Technology & Library)
+3. [Technology](#Technology_&_Library)
 4. [Requirement](#Requirement)
 5. [Installation Steps](#Installation_Steps)
 6. [API Endpoints](#API_Endpoints)
