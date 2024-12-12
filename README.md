@@ -4,15 +4,15 @@
 
 1. [Description](#Description)
 2. [Team](#C242-PS246---ml)
-4. [API Endpoint](#Technology)
+3. [Technology](#Technology & Library)
+4. [Requirement](#Requirement)
+5. [Installation Steps](#Installation_Steps)
+6. [API Endpoints](#API_Endpoints)
+7. [Usage](#Usage)
+8. [Example Response](#Example_Response)
 
 ## Description
-The MentalQ app utilizes **a robust cloud architecture** powered by **Google Cloud**. We’ve implemented a **CI/CD pipeline** that integrates our API from GitHub into Cloud Build, automatically packaging the app into a Dockerfile and storing it in **Artifact Registry**. The app is then deployed to two synchronized **Cloud Run** instances, **ensuring high availability**.
-
-Our app services are powered by **Cloud Storage** and **Cloud SQL** for **efficient data management**. **Cloud IAM** and **Secret Manager** are **integrated** into the architecture to provide **secure environment** management, ensuring that sensitive information such as API keys and configurations are securely handled. This integration with Secret Manager ensures that our deployment pipeline meets the **highest standards of security** while providing **a seamless, automated process** from development to deployment.
-
-**Once set up**, the API is ready to be **consumed** by the MentalQ app, **offering secure, scalable, and reliable mental health support to users.**
-
+The **Machine Learning** part of the MentalQ app helps analyze users' mental health by studying their daily notes. It uses a **LSTM model** to look at the text and understand how users are feeling. The process starts by collecting and cleaning the data, then training the model to recognize different mental health patterns. Once the model is ready, it’s built into the app to give users personalized feedback based on their mood. Tools like **TensorFlow** and **NLTK** help build and improve the model. By using this technology, MentalQ can help users better understand their mental health, offering support when they need it most.
 
 ## C242-PS246 - ML
 
@@ -22,12 +22,20 @@ Our app services are powered by **Cloud Storage** and **Cloud SQL** for **effici
 | M227B4KY3579 | Rafi Achmad Fahreza | Machine Learning | Universitas Jember | [![text](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rafiachmadfr/) |
 | M129B4KY1504 | Fikri Faqih Al Fawwaz | Machine Learning | Politeknik Negeri Jember | [![text](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/fikrifaqihalfawwaz/) |
 
-## Technology
+## Technology & Library
 
-- Flask
-- TensorFlow and Keras
+- Pandas
+- Matplotlib
 - NumPy
-- More++
+- Random
+- Stanza
+- re (Regular Expressions)
+- H5py
+- Pickle
+- JSON
+- TensorFlow
+- Keras
+- Scikit-learn
 
 ## Installation and Usage of Flask Application
 
@@ -45,8 +53,8 @@ pip (package installer for Python)
 Clone the repository from GitHub to your computer.
 
 ```bash
-git clone https://github.com/MentalQ-App/MentalQ-ML.git
-cd NONE
+git clone https://github.com/MentalQ-App/MentalQ-Model.git
+cd model_save_ml/ml_model_lstm.h5
 ```
 
 2. Ensure Model and Data Availability
