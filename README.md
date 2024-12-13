@@ -7,9 +7,7 @@
 3. [Technology & Library](#Technology-&-Library)
 4. [Requirement](#Requirement)
 5. [Installation Steps](#Installation-Steps)
-6. [API Endpoints](#API-Endpoints)
-7. [Usage](#Usage)
-8. [Example Response](#Example-Response)
+6. [Usage of Flask Application](#Usage-of-Flask-Application)
 
 ## Description
 The **Machine Learning** part of the MentalQ app helps analyze users' mental health by studying their daily notes. It uses a **LSTM model** to look at the text and understand how users are feeling. The process starts by collecting and cleaning the data, then training the model to recognize different mental health patterns. Once the model is ready, it’s built into the app to give users personalized feedback based on their mood. Tools like **TensorFlow** and **NLTK** help build and improve the model. By using this technology, MentalQ can help users better understand their mental health, offering support when they need it most.
@@ -37,41 +35,6 @@ The **Machine Learning** part of the MentalQ app helps analyze users' mental hea
 - Keras
 - Scikit-learn
 
-## Installation and Usage of Flask Application
-
-This application uses Flask as a web framework to create prediction API using a LSTM model. Several dependencies must be installed before running the application.
-
-Usage of Flask Application
-API Endpoint
-/predict
-Method: POST
-
-Request Format:
-Send a JSON payload with a list of statements.
-
-{
-    "statements": [ "Saya merasa hidup saya tidak berarti dan lebih baik mati saja.",
-    ]
-}
-
-Respon Format :
-The API returns a list with the predicted mental health status and confidence scores for each statement.
-
-{
-        "confidence_scores": {
-            "Anxiety": 0.007962707430124283,
-            "Bipolar": 0.004331799224019051,
-            "Depression": 0.33362269401550293,
-            "Normal": 0.003008028957992792,
-            "Personality disorder": 0.008331895805895329,
-            "Stress": 0.005370507948100567,
-            "Suicidal": 0.6373724341392517
-        },
-        "predicted_status": "Suicidal",
-        "statement": "Saya merasa hidup saya tidak berarti dan lebih baik mati saja."
-    },
-
-
 ## Requirement
 Make sure you have installed:
 
@@ -90,3 +53,38 @@ cd model_save_ml/ml_model_lstm.h5
 
 2. Ensure Model and Data Availability
 Make sure the model file (model.h5) is available in the project's root directory.
+
+## Usage of Flask Application
+
+This application uses Flask as a web framework to create prediction API using a LSTM model. Several dependencies must be installed before running the application.
+
+Usage of Flask Application
+API Endpoint
+/predict
+Method: POST
+
+Request Format:
+Send a JSON payload with a list of statements.
+
+```bash
+    "statements": [ "Saya merasa hidup saya tidak berarti dan lebih baik mati saja.",
+    ]
+```
+
+Respon Format :
+The API returns a list with the predicted mental health status and confidence scores for each statement.
+
+```bash
+        "confidence_scores": {
+            "Anxiety": 0.007962707430124283,
+            "Bipolar": 0.004331799224019051,
+            "Depression": 0.33362269401550293,
+            "Normal": 0.003008028957992792,
+            "Personality disorder": 0.008331895805895329,
+            "Stress": 0.005370507948100567,
+            "Suicidal": 0.6373724341392517
+        },
+        "predicted_status": "Suicidal",
+        "statement": "Saya merasa hidup saya tidak berarti dan lebih baik mati saja."
+```
+
